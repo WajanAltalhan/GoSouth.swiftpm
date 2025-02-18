@@ -1,10 +1,11 @@
 import SwiftUI
 
-struct ContentView: View {
+struct HomeScreen: View {
     var body: some View {
-        ZStack {
-            Rectangle()
+        ZStack{
+            
             Color("bg")
+                .ignoresSafeArea()
             Image("aseer")
                 .offset(x: 60, y: 315)
             VStack{
@@ -32,11 +33,11 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass")
                         .font(.system(size: 60))
                         .offset(x: -103, y: -1)
-                        .foregroundColor(Color("red"))
+                        .foregroundColor(Color("redd"))
                     Image(systemName: "magnifyingglass")
                         .font(.system(size: 60))
                         .offset(x: -100, y: -1)
-                        .foregroundColor(Color("blue"))
+                        .foregroundColor(Color("bluee"))
                     Text("Explore Places")
                         .font(.title)
                         .fontWeight(.semibold)
@@ -51,22 +52,19 @@ struct ContentView: View {
                     Image(systemName: "bookmark")
                         .font(.system(size: 60))
                         .offset(x: -103, y: -1)
-                        .foregroundColor(Color("yellow"))
+                        .foregroundColor(Color("yelloww"))
                     Image(systemName: "bookmark")
                         .font(.system(size: 60))
                         .offset(x: -100, y: -1)
-                        .foregroundColor(Color("green"))
-                   Text("Bookmarked\nplaces")
+                        .foregroundColor(Color("greenn"))
+                    Text("Bookmarked\nplaces")
                         .font(.title)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
                         .offset(x: 40, y: -1)
                 }
                 
-                
-                
+                    }
+                }
             }
         }
-    }
-    
-}

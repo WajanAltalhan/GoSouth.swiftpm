@@ -7,31 +7,33 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct PlaceScreenView: View {
     var body: some View {
-        ZStack {
-            Rectangle()
+      ZStack {
             Color("bg")
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             Image("aseer")
                 .offset(x: 60, y: 315)
             VStack{
+                //scv file
                 Image(systemName: "arrow.left")
                     .offset(x: -150, y: -150)
                     .font(.system(size: 40))
                     .foregroundColor(Color("red"))
+                
                 Text("Famous Places \nTo Visit In Abha ")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .offset(x: -50, y: -80)
-                    Rectangle()
-                        .fill(Color("rec"))
-                        .frame(width: 360, height: 140)
-                        .cornerRadius(20)
+                Rectangle()
+                    .fill(Color("rec"))
+                    .frame(width: 360, height: 140)
+                    .cornerRadius(20)
+                
                 HStack{
                     Image("hc")
-                    .offset(x: 12, y: -125)
+                        .offset(x: 12, y: -125)
                     Text("High City")
                         .font(.system(size: 30))
                         .font(.headline)
@@ -41,7 +43,7 @@ struct SwiftUIView: View {
                     Image(systemName: "star.fill")
                         .offset(x: -123, y: -126)
                         .foregroundColor(Color("yellow"))
-                 
+                    
                 }
             }
         }
@@ -49,5 +51,5 @@ struct SwiftUIView: View {
 }
 
 #Preview {
-    SwiftUIView()
+    PlaceScreenView()
 }
