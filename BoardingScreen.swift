@@ -29,7 +29,7 @@ struct BoardingScreen: View {
                     }
                 }
                 .padding(.top)
-                .offset(x: -300, y: 60)
+                .offset(x: -320, y: 60)
                 Spacer(minLength: 170)
                 TabView(selection: $currentPage) {
                     ForEach(0..<pages.count, id: \.self) { index in
