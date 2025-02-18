@@ -15,23 +15,26 @@ struct SplashScreenView: View {
         if isActive{
             BoardingScreen()
         }else{
+            ZStack{
+                Color(.bg).ignoresSafeArea()
             VStack{
+                
                 VStack{
-                                                Color(.bg)
-                                                    .edgesIgnoringSafeArea(.all)
-                                                Image("logo")
-                                                    .resizable()
-                                                    .frame(width: 400, height: 400)
-                    }
-                    .scaleEffect(size)
-                    .opacity(opacity)
-                    .onAppear{
-                        withAnimation(.easeIn(duration: 1.2)) {
-                            self.size = 0.9
-                            self.opacity = 1.0
-                        }
+                    Image("logo")
+                        .resizable()
+                        .frame(width: 198, height: 331)
+                }
+                
+                .scaleEffect(size)
+                .opacity(opacity)
+                .onAppear{
+                    withAnimation(.easeIn(duration: 1.2)) {
+                        self.size = 0.9
+                        self.opacity = 1.0
                     }
                 }
+            }
+        }
                 .onAppear{
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         withAnimation{

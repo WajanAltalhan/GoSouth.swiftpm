@@ -18,83 +18,83 @@ struct BoardingScreen: View {
     ]
     
     var body: some View {
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                    }) {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.redd)
-                            .font(.system(size: 27, weight: .bold))
-                            .padding()
-                            .offset(x: -300, y: 60)
-                    }
-                   
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                }) {
+                    Image(systemName: "xmark")
+                        .foregroundColor(.redd)
+                        .font(.system(size: 27, weight: .bold))
+                        .padding()
+                        .offset(x: -300, y: 60)
                 }
-                Spacer(minLength: 170)
-                TabView(selection: $currentPage) {
-                    ForEach(0..<pages.count, id: \.self) { index in
-                        OnboardingPageView(page: pages[index])
-                            .tag(index)
-                    }
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .ignoresSafeArea(.all)
                 
-                HStack(spacing: 8) {
-                    ForEach(0..<pages.count, id: \.self) { index in
-                        Circle()
-                            .frame(width: 8, height: 8)
-                            .foregroundColor(currentPage == index ? .brown : .brown.opacity(0.5))
-                            .offset(y: -270)
-                        
-                    }
+            }
+            Spacer(minLength: 170)
+            TabView(selection: $currentPage) {
+                ForEach(0..<pages.count, id: \.self) { index in
+                    OnboardingPageView(page: pages[index])
+                        .tag(index)
                 }
             }
-            .background(Color(.bg))
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .ignoresSafeArea(.all)
-        }
-    }
-    struct OnboardingPageView: View {
-        let page: OnboardingPage
-        
-        var body: some View {
-                VStack {
-                    if let uiImage = UIImage(named: page.imageName) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 250, maxHeight: 250)
-                    }
-
-                    Text(page.text)
-                        .font(.system(size: 18, weight: .bold))
-                        .foregroundColor(page.textColor)
-                        .multilineTextAlignment(.center)
-                    .padding()
-
-                    Spacer()
-                    Image("aseer2")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity)
+            
+            HStack(spacing: 8) {
+                ForEach(0..<pages.count, id: \.self) { index in
+                    Circle()
+                        .frame(width: 8, height: 8)
+                        .foregroundColor(currentPage == index ? .brown : .brown.opacity(0.5))
+                        .offset(y: -270)
+                    
                 }
-                .ignoresSafeArea(.all, edges: .bottom)
+            }
         }
+        .background(Color(.bg))
+        .ignoresSafeArea(.all)
     }
+}
+struct OnboardingPageView: View {
+    let page: OnboardingPage
     
+    var body: some View {
+        VStack {
+            if let uiImage = UIImage(named: page.imageName) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: 250, maxHeight: 250)
+            }
+            
+            Text(page.text)
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(page.textColor)
+                .multilineTextAlignment(.center)
+                .padding()
+            
+            Spacer()
+            Image("aseer2")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity)
+        }
+        .ignoresSafeArea(.all, edges: .bottom)
+    }
+}
+
 struct OnboardingPage {
     let imageName: String
     let text: String
     let textColor: Color
 }
 
-    #Preview {
-        BoardingScreen()
-    }
-    extension Color {
-        static let yelloww = Color("yelloww")
-        static let bluee = Color("bluee")
-        static let redd = Color("redd")
-        static let greenn = Color("greenn")
-    }
+#Preview {
+    BoardingScreen()
+}
+extension Color {
+    static let yelloww = Color("yelloww")
+    static let bluee = Color("bluee")
+    static let redd = Color("redd")
+    static let greenn = Color("greenn")
+}
