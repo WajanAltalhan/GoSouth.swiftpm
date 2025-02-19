@@ -26,17 +26,17 @@ struct BookMarked: View {
                             .fill(Color("rec"))
                             .frame(width: 352, height: 126.5)
                             .cornerRadius(20)
-                        Image("hc")
+                        Image("as")
                             .resizable()
                             .frame(width:139, height:78)
                             .offset(x: -90)
                         HStack{
                             VStack{
-                                Text("High City")
+                                Text("Art Street")
                                     .font(.title2)
                                     .fontWeight(.semibold)
                                     .multilineTextAlignment(.center)
-                                    .offset(x: 55, y: -10)
+                                    .offset(x: 59, y: -10)
                                 HStack{
                                     Image(systemName: "star.fill")
                                     Image(systemName: "star.fill")

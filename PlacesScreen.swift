@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlacesScreen: View {
     var body: some View {
+        NavigationView{
         ZStack{
             Color(.bg)
                 .ignoresSafeArea()
@@ -65,6 +66,7 @@ struct PlacesScreen: View {
                         
                     }
                 }
+                
             }
             .offset(y: -150)
             
@@ -102,7 +104,7 @@ struct PlacesScreen: View {
                 }
             }
             .offset(y: 1)
-            
+            NavigationLink(destination: PlaceInfo()){
             VStack{
                 ZStack{
                     Rectangle()
@@ -116,6 +118,7 @@ struct PlacesScreen: View {
                             Text("Art Street")
                                 .font(.title3)
                                 .fontWeight(.semibold)
+                                .foregroundColor(Color.black)
                                 .multilineTextAlignment(.leading)
                                 .offset(x: 70, y: -10)
                             HStack{
@@ -136,6 +139,7 @@ struct PlacesScreen: View {
                         
                     }
                 }
+            }
             }
             .offset(y: 150)
             
@@ -175,8 +179,8 @@ struct PlacesScreen: View {
                 }
             }
             .offset(y: 300)
-            }
-            
+        }
+    }
         }
     }
 
