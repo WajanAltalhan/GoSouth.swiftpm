@@ -37,13 +37,19 @@ struct PlaceInfo: View {
                                 .multilineTextAlignment(.leading)
                                 .offset(x: -66, y: -160)
                             HStack{
+                                
                                 Image(systemName: "star.fill")
                                 Image(systemName: "star.fill")
                                 Image(systemName: "star.fill")
                                 Image(systemName: "star.fill")
+                                
+                                Image(systemName: "bookmark")
+                                    .font(.system(size: 40))
+                                    .offset(x: 180, y: -50)
+                                    .foregroundColor(Color("greenn"))
                             }
                             .foregroundColor(Color("yelloww"))
-                            .offset(x: -120, y: -105)
+                            .offset(x: -90, y: -105)
                             Text(" The Famous Art Street \nin Abha is home to around art galleries,\n a theater that hosts different \n shows and parties and many high-end restaurants and cafes.The famous \nArt Street is located just off the \nKing Khalid road, in \nAl Muftah village of Abha.")
                                 .font(.system(size:20))
                             
