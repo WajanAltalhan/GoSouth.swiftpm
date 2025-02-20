@@ -50,7 +50,7 @@ struct BoardingScreen: View {
                     }
                 }
             }
-            
+            .navigationBarBackButtonHidden(true)
             .background(Color(.bg))
             .ignoresSafeArea(.all)
         }

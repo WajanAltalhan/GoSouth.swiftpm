@@ -65,6 +65,7 @@ struct BookMarked: View {
                 .offset(y: -180)
             }
         }
+       
     }
 }
 
